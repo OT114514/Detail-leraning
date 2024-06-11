@@ -20,3 +20,7 @@
 清除终端中先前的语句，让界面看起来更加清爽 输入“cls”
 我pytorch版本选择2.1.2 cuda选择11.8，python版本在11以上才可以添加opencv环境
 opencv环境直接用pip install opencv——python 语句就可以下载
+
+## 6.11 
+keil 中没有用到的函数会报warnning，可以通过这个方法取消报warning
+![image](https://github.com/OT114514/Detail-leraning/assets/169598472/f22ba233-2adc-4401-89ea-785b4a138290)
