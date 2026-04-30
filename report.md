@@ -67,11 +67,9 @@ assign mem_rd_data_o[31:24] = (hazard_flag && hazard_wstrb[3]) ? w_data_temp[31:
 
 logic rst_n_d1;
 logic cpu_safe_rst_n;
-
 //原始复位是高电平有效，转为低电平有效的原始信号
 logic raw_rst_n;
 assign raw_rst_n = ~w_clk_rst;
-
 //使用双触发器打两拍同步
 always_ff@(posedge w_cpu_clk or negedge raw_rst_n)begin
     if(!raw_rst_n)begin
