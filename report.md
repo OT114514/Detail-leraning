@@ -6,7 +6,7 @@ assign pc_jalr = {mem_agu_addr[31:1], 1'b0};
 // 3. 剥离专用分支比较器，直接使用前递数据并行比较
 wire branch_eq          = (A == ALU_DB);
 wire branch_lt_signed   = ($signed(A) < $signed(ALU_DB));
-assign jump_flag = (beq_ex_i & branch_eq) | (blt_ex_i & branch_lt_signed) ;
+assign jump_flag        = (beq_ex_i & branch_eq) | (blt_ex_i & branch_lt_signed) ;
 
 
 // 减法转加法：A - B = A + (~B) + 1
@@ -60,6 +60,9 @@ assign mem_rd_data_o[7:0]   = (hazard_flag && hazard_wstrb[0]) ? w_data_temp[7:
 assign mem_rd_data_o[15:8]  = (hazard_flag && hazard_wstrb[1]) ? w_data_temp[15:8]  : r_data_temp[15:8];
 assign mem_rd_data_o[23:16] = (hazard_flag && hazard_wstrb[2]) ? w_data_temp[23:16] : r_data_temp[23:16];
 assign mem_rd_data_o[31:24] = (hazard_flag && hazard_wstrb[3]) ? w_data_temp[31:24] : r_data_temp[31:24];
+
+
+
 
 
 logic rst_n_d1;
